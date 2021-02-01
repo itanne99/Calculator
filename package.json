@@ -5,9 +5,8 @@
   "main": "js/index.js",
   "scripts": {
     "test": "jest",
-    "start": "node js/index.js",
     "coverage": "jest --coverage",
-    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
+    "coveralls": "jest --coverage && coveralls < coverage/lcov.info"
   },
   "keywords": [],
   "author": "Ido Tanne",
