@@ -8,3 +8,4 @@ class Calculation {
         return this.op(this.a,this.b);
     }
 }
+module.exports = Calculation;
