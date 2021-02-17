@@ -1,3 +1,4 @@
+const calculation = require('./models/calculation');
 const sum = require('./operations/sum');
 const subtract = require('./operations/subtract');
 const multiply = require('./operations/multiply');
@@ -6,23 +7,41 @@ const squareRoot = require('./operations/squareRoot');
 const square = require('./operations/square');
 
 class calculator{
-    sum(a,b){
-        return sum(a,b);
+    static caclulations = [];
+    static sum(a,b) {
+        let calculation = new Calculation(a,b,sum);
+        calculator.caclulations.push(calculation);
+        return calculation.getResults();
     }
-    subtract(a,b){
-        return subtract(a,b);
+
+    static subtract(a,b) {
+        let calculation = new Calculation(a,b,subtract);
+        calculator.caclulations.push(calculation);
+        return calculation.getResults();
     }
-    multiply(a,b){
-        return multiply(a,b);
+
+    static multiply(a,b) {
+        let calculation = new Calculation(a,b,multiply);
+        calculator.caclulations.push(calculation);
+        return calculation.getResults();
     }
-    divide(a,b){
-        return divide(a,b);
+
+    static divide(a,b) {
+        let calculation = new Calculation(a,b,divide);
+        calculator.caclulations.push(calculation);
+        return calculation.getResults();
     }
-    squareRoot(a){
-        return squareRoot(a);
+
+    static square(a) {
+        let calculation = new Calculation(a,square);
+        calculator.caclulations.push(calculation);
+        return calculation.getResults();
     }
-    power(a){
-        return square(a);
+
+    static squareRoot(a){
+        let calculation = new Calculation(a,squareRoot);
+        calculator.caclulations.push(calculation);
+        return calculation.getResults();
     }
 }
 
