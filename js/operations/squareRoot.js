@@ -1,4 +1,4 @@
-function squareRoot(a) {
-    return Math.sqrt(a);
+function root(a,b) {
+    return Math.pow(a,1/b);
 }
-module.exports = squareRoot;
+module.exports = root;
