@@ -16,7 +16,7 @@ class readCSV{
                 .on('readable', function(){
                     let record
                     while (record = this.read()) {
-                        console.log("From File",record);
+                        //console.log("From File",record);
                         output.push(record);
                     }
                     return output;
