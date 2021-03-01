@@ -1,26 +1,42 @@
 const Calculator = require('../js/calculator');
+const csvReader = require('../js/csvReader/csvReader');
+let csvFile = new csvReader();
 
 test('Calculator adding two numbers', () => {
-    let result = Calculator.sum(1,2)
-    expect(result).toBe(3);
+    for(row in csvFile.readCSV('testCases/sumTest.csv')){
+        /*For row in csvReader*/
+        let result = Calculator.sum(row[0],row[1]) /*row[0],row[1]*/
+        expect(result).toBe(row[2]); /*toBe(row[2])*/
+    }
+
 });
 test('Calculator difference between two numbers', () => {
-    let result = Calculator.subtract(1,2);
-    expect(result).toBe(-1);
+    for(row in csvFile.readCSV('testCases/sumTest.csv')) {
+        let result = Calculator.subtract(row[0], row[1]) /*row[0],row[1]*/
+        expect(result).toBe(row[2]); /*toBe(row[2])*/
+    }
 });
 test('Calculator product of two numbers', () => {
-    let result = Calculator.multiply(1,2);
-    expect(result).toBe(2);
+    for(row in csvFile.readCSV('testCases/sumTest.csv')) {
+        let result = Calculator.multiply(row[0], row[1]) /*row[0],row[1]*/
+        expect(result).toBe(row[2]); /*toBe(row[2])*/
+    }
 });
 test('Calculator quotient of two numbers', () => {
-    let result = Calculator.divide(1,2);
-    expect(result).toBe(.5);
+    for(row in csvFile.readCSV('testCases/sumTest.csv')) {
+        let result = Calculator.divide(row[0], row[1]) /*row[0],row[1]*/
+        expect(result).toBe(row[2]); /*toBe(row[2])*/
+    }
 });
 test('Calculator power squared of a number', () => {
-    let result = Calculator.power(3,2);
-    expect(result).toBe(9);
+    for(row in csvFile.readCSV('testCases/sumTest.csv')) {
+        let result = Calculator.power(row[0], row[1]) /*row[0],row[1]*/
+        expect(result).toBe(row[2]); /*toBe(row[2])*/
+    }
 });
 test('Calculator squared root of a number', () => {
-    let result = Calculator.root(9,2);
-    expect(result).toBe(3);
+    for(row in csvFile.readCSV('testCases/sumTest.csv')) {
+        let result = Calculator.root(row[0], row[1]) /*row[0],row[1]*/
+        expect(result).toBe(row[2]); /*toBe(row[2])*/
+    }
 });
