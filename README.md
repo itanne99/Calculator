@@ -1,5 +1,9 @@
 # IS219-Calculator
 [![Coverage Status](https://coveralls.io/repos/github/itanne99/calculator/badge.svg?branch=master)](https://coveralls.io/github/itanne99/calculator?branch=master) [![Build Status](https://www.travis-ci.com/itanne99/IS219-calculator.svg?branch=master)](https://www.travis-ci.com/itanne99/IS219-calculator)
+# Design Pattern
+### Singleton
+By using singleton we can have the variables of a class kept stored on the file that the class is called upon. <br>
+For example, if we call the calculator in one file and run 10 different calculations and call the class again on a different file we won't see those previously made calculations.
 # SOLID Principles
 1. Single-responsibility principle <br>
   The purpose of this is to prevent a programmer from making one huge document with fifteen functions. Instead, each program will have one purpose, and one purpose only. For example, with our calculator assignment that we have. A programmer could have had all the operations in one file, but instead by following the single-responsibility principle the programmer has each operand as its own file to which they are all called into a calculator file to be used.<br>
