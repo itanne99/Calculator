@@ -1,11 +1,12 @@
 const parse = require('csv-parse')
 const fs = require('fs');
+const path = require('path')
 const output = []
 
 class readCSV{
 
     readCSV(csvFile){
-        fs.createReadStream(csvFile)
+        fs.createReadStream(path.resolve(csvFile))
             .pipe(parse({
                 columns: false,
                 delimiter: ',',
