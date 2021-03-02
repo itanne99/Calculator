@@ -150,7 +150,7 @@ class SubtractCalculator extends Calculator{
 }
 module.exports = SumCalculator;
 ```
-####### usingCalculator.js
+###### usingCalculator.js
 ```js
 //import calculator, sumcalculator, subtractioncalculator
 
