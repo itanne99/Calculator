@@ -1,42 +1,57 @@
 const Calculator = require('../js/calculator');
-const csvReader = require('../js/csvReader/csvReader');
-let csvFile = new csvReader();
+const CSVFile = require('../js/csvReader/CSVReader');
+
 
 test('Calculator adding two numbers', () => {
-    for(row in csvFile.readCSV('tests/testCases/testSum.csv')){
+    console.log("****** Testing Addition ******")
+    CSVFile.getRecords('../testCases/testSum.csv').forEach(function(row, index){
         /*For row in csvReader*/
-        let result = Calculator.sum(row[0],row[1]) /*row[0],row[1]*/
-        expect(result).toBe(row[2]); /*toBe(row[2])*/
-    }
+        let result = Calculator.sum(parseInt(row[0]), parseInt(row[1])) /*row[0],row[1]*/
+        expect(result).toBe(parseInt(row[2])); /*toBe(row[2])*/
+    })
+});
 
-});
 test('Calculator difference between two numbers', () => {
-    for(row in csvFile.readCSV('tests/testCases/testSubtraction.csv')) {
-        let result = Calculator.subtract(row[0], row[1]) /*row[0],row[1]*/
-        expect(result).toBe(row[2]); /*toBe(row[2])*/
-    }
+    console.log("****** Testing Subtraction ******")
+    CSVFile.getRecords('../testCases/testSubtraction.csv').forEach(function(row, index){
+        /*For row in csvReader*/
+        let result = Calculator.subtract(parseInt(row[0]), parseInt(row[1])) /*row[0],row[1]*/
+        expect(result).toBe(parseInt(row[2])); /*toBe(row[2])*/
+    })
 });
+
 test('Calculator product of two numbers', () => {
-    for(row in csvFile.readCSV('tests/testCases/testMultiply.csv')) {
-        let result = Calculator.multiply(row[0], row[1]) /*row[0],row[1]*/
-        expect(result).toBe(row[2]); /*toBe(row[2])*/
-    }
+    console.log("****** Testing Multiply ******")
+    CSVFile.getRecords('../testCases/testMultiply.csv').forEach(function(row, index){
+        /*For row in csvReader*/
+        let result = Calculator.multiply(parseInt(row[0]), parseInt(row[1])) /*row[0],row[1]*/
+        expect(result).toBe(parseInt(row[2])); /*toBe(row[2])*/
+    })
 });
+
 test('Calculator quotient of two numbers', () => {
-    for(row in csvFile.readCSV('tests/testCases/testDivide.csv')) {
-        let result = Calculator.divide(row[0], row[1]) /*row[0],row[1]*/
-        expect(result).toBe(row[2]); /*toBe(row[2])*/
-    }
+    console.log("****** Testing Divide ******")
+    CSVFile.getRecords('../testCases/testDivide.csv').forEach(function(row, index){
+        /*For row in csvReader*/
+        let result = Calculator.divide(parseFloat(row[0]), parseFloat(row[1])) /*row[0],row[1]*/
+        expect(result).toBe(parseFloat(row[2])); /*toBe(row[2])*/
+    })
 });
+
 test('Calculator power squared of a number', () => {
-    for(row in csvFile.readCSV('tests/testCases/testPower.csv')) {
-        let result = Calculator.power(row[0], row[1]) /*row[0],row[1]*/
-        expect(result).toBe(row[2]); /*toBe(row[2])*/
-    }
+    console.log("****** Testing Power ******")
+    CSVFile.getRecords('../testCases/testPower.csv').forEach(function(row, index){
+        /*For row in csvReader*/
+        let result = Calculator.power(parseInt(row[0]), 2) /*row[0],row[1]*/
+        expect(result).toBe(parseInt(row[1])); /*toBe(row[2])*/
+    })
 });
+
 test('Calculator squared root of a number', () => {
-    for(row in csvFile.readCSV('tests/testCases/testRoot.csv')) {
-        let result = Calculator.root(row[0], row[1]) /*row[0],row[1]*/
-        expect(result).toBe(row[2]); /*toBe(row[2])*/
-    }
+    console.log("****** Testing Root ******")
+    CSVFile.getRecords('../testCases/testRoot.csv').forEach(function(row, index){
+        /*For row in csvReader*/
+        let result = Calculator.root(parseFloat(row[0]), 2) /*row[0],row[1]*/
+        expect(result).toBe(parseFloat(row[1])); /*toBe(row[2])*/
+    })
 });
