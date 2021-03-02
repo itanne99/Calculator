@@ -14,7 +14,9 @@
   "license": "ISC",
   "dependencies": {
     "csv": "^5.3.1",
-    "csv-parse": "latest"
+    "csv-parse": "latest",
+    "jquery-csv": "^1.0.11",
+    "papaparse": "^5.3.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.9",
