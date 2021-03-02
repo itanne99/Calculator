@@ -3,7 +3,7 @@ module.exports = class Read {
         const path = require('path')
         const fs = require('fs');
         const parse = require('csv-parse/lib/sync')
-        let absolutePath = path.resolve(filename);
+        let absolutePath = filename;
         const options = {
             columns: false,
             delimiter: ',',
